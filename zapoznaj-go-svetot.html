@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Запознај го Светот — Индивидуални патувања по најповолни цени</title>
+<meta name="description" content="Организираме најповолни индивидуални патувања до најубавите светски дестинации. Лет, хотел, багаж и онлајн водич — сè на едно место.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ec;
+  --cream-2:#f2e9d8;
+  --white:#fffdf8;
+  --brown:#4f3520;
+  --brown-2:#7a5636;
+  --tan:#c9a361;
+  --tan-light:#ead9ba;
+  --ink:#2a2013;
+  --muted:#8b7a61;
+  --red:#d03325;
+  --green:#2f7d46;
+  --ig1:#7b3ff2;--ig2:#c32aa3;--ig3:#f46f30;
+  --pink:#e2578f;--pink-2:#f19ec2;--pink-light:#fdeaf3;
+  --shadow:0 25px 70px -25px rgba(79,53,32,.32);
+  --radius:24px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);
+  line-height:1.6;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  position:relative;width:100%;
+}
+body::before{ /* film grain */
+  content:'';position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+::selection{background:var(--tan);color:var(--brown)}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.script{font-family:'Caveat',cursive}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ============ NAV ============ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 4.5vw;transition:.4s;
+}
+nav.scrolled{
+  background:rgba(255,253,248,.82);backdrop-filter:blur(16px) saturate(1.4);
+  -webkit-backdrop-filter:blur(16px) saturate(1.4);
+  box-shadow:0 10px 40px -20px rgba(79,53,32,.35);padding:9px 4.5vw;
+}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{width:50px;height:50px;filter:drop-shadow(0 6px 14px rgba(79,53,32,.35));transition:.4s}
+.logo:hover svg{transform:rotate(-8deg) scale(1.06)}
+.logo-text{font-family:'Playfair Display',serif;font-weight:800;font-size:1.08rem;color:var(--brown);line-height:1.12}
+.logo-text small{display:block;font-family:'Manrope',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--tan)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink);position:relative;padding:4px 0}
+.nav-links a:not(.btn)::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--tan),var(--brown));transition:.35s}
+.nav-links a:not(.btn):hover::after{width:100%}
+.btn{
+  --edge:#2e1d0d;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(180deg,var(--brown-2) 0%,var(--brown) 100%);
+  color:var(--cream)!important;padding:16px 34px;border-radius:100px;text-decoration:none;
+  font-weight:800;font-size:.95rem;letter-spacing:.02em;border:none;cursor:pointer;
+  transition:transform .12s ease,box-shadow .12s ease,filter .3s;
+  box-shadow:0 5px 0 var(--edge),0 18px 35px -12px rgba(79,53,32,.55);
+  font-family:'Manrope',sans-serif;position:relative;overflow:hidden;
+}
+.btn::before{content:'';position:absolute;inset:2px 2px 55% 2px;border-radius:100px;
+  background:linear-gradient(180deg,rgba(255,255,255,.28),transparent);pointer-events:none}
+.btn::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;transform:skewX(-25deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:.6s}
+.btn:hover{filter:brightness(1.12);box-shadow:0 5px 0 var(--edge),0 24px 45px -14px rgba(79,53,32,.6)}
+.btn:hover::after{left:130%}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--edge),0 8px 18px -10px rgba(79,53,32,.6)}
+.btn.ghost{background:transparent;color:var(--brown)!important;border:2px solid var(--brown);box-shadow:none}
+.btn.ghost::before{display:none}
+.btn.ghost:hover{background:var(--brown);color:var(--cream)!important;filter:none}
+.btn.ghost:active{transform:translateY(2px)}
+nav .btn{padding:13px 26px}
+.burger{display:none;background:none;border:none;font-size:26px;color:var(--brown);cursor:pointer}
+
+/* ============ DEAL BAR ============ */
+.deal-bar{
+  position:relative;z-index:5;margin:96px 4.5vw 0;
+  background:linear-gradient(120deg,#5b1e63,#a02d8f 40%,var(--pink) 75%,#f0819f);
+  background-size:220% 220%;animation:dealIn 1s .3s cubic-bezier(.2,1.2,.3,1) backwards,gradMove 7s ease-in-out infinite alternate;
+  border-radius:20px;color:#fff;padding:14px 26px;
+  display:flex;align-items:center;justify-content:center;gap:14px 30px;flex-wrap:wrap;
+  box-shadow:0 25px 55px -22px rgba(160,45,143,.65);
+}
+@keyframes gradMove{from{background-position:0% 50%}to{background-position:100% 50%}}
+.qmarks i{display:inline-block;font-style:normal;font-family:'Playfair Display',serif;font-size:1.4rem;animation:qbounce 1.1s infinite}
+.qmarks i:nth-child(2){animation-delay:.15s}.qmarks i:nth-child(3){animation-delay:.3s}
+@keyframes qbounce{0%,100%{transform:none}40%{transform:translateY(-6px) rotate(8deg)}}
+.deal-bar .deal-cta{color:#a02d8f}
+@keyframes dealIn{from{transform:translateY(-30px);opacity:0}to{transform:none;opacity:1}}
+.deal-bar .flame{font-size:1.5rem;animation:flick 1.2s infinite alternate}
+@keyframes flick{from{transform:scale(1) rotate(-4deg)}to{transform:scale(1.15) rotate(5deg)}}
+.deal-bar .lbl{font-weight:800;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:100px}
+.deal-bar .txt{font-weight:700;font-size:1rem}
+.deal-bar .txt b{font-family:'Playfair Display',serif;font-size:1.25rem;letter-spacing:.02em}
+.deal-bar .old{opacity:.75;text-decoration:line-through;font-weight:600;margin:0 6px}
+.deal-bar .new{background:#fff;color:var(--red);font-weight:800;padding:3px 13px;border-radius:100px;font-size:1.05rem;display:inline-block;animation:pulseP 1.6s infinite}
+@keyframes pulseP{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.deal-bar .count{display:flex;gap:7px;align-items:center;font-weight:800}
+.deal-bar .count .cell{background:rgba(0,0,0,.28);border-radius:10px;padding:6px 10px;font-variant-numeric:tabular-nums;font-size:1rem;min-width:44px;text-align:center}
+.deal-bar .count small{display:block;font-size:.55rem;font-weight:700;letter-spacing:.12em;opacity:.8}
+.deal-bar .deal-cta{background:#fff;color:var(--red);border:none;border-radius:100px;padding:12px 26px;font-weight:800;font-size:.88rem;cursor:pointer;font-family:'Manrope',sans-serif;transition:transform .12s,box-shadow .12s;box-shadow:0 4px 0 rgba(0,0,0,.28),0 12px 26px -10px rgba(0,0,0,.45)}
+.deal-bar .deal-cta:hover{transform:translateY(-2px) scale(1.03)}
+.deal-bar .deal-cta:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.28),0 6px 14px -8px rgba(0,0,0,.4)}
+
+/* ============ HERO ============ */
+.hero{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:4vw;align-items:center;
+  padding:56px 4.5vw 70px;position:relative;
+}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;opacity:.55;animation:blob 14s ease-in-out infinite alternate}
+.blob.b1{width:520px;height:520px;top:-160px;right:-120px;background:radial-gradient(circle,#f8c4dd,transparent 70%)}
+.blob.b2{width:460px;height:460px;bottom:-160px;left:-140px;background:radial-gradient(circle,#f0cf9a,transparent 70%);animation-delay:3s}
+@keyframes blob{from{transform:translateY(0) scale(1)}to{transform:translateY(40px) scale(1.12)}}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;background:var(--white);
+  border:1px solid var(--tan-light);padding:9px 20px;border-radius:100px;
+  font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brown-2);
+  box-shadow:0 8px 24px -12px rgba(79,53,32,.35);
+}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(47,125,70,.45)}50%{opacity:.5;box-shadow:0 0 0 7px rgba(47,125,70,0)}}
+.hero h1{
+  font-size:clamp(2.5rem,4.9vw,4.3rem);font-weight:900;line-height:1.05;color:var(--brown);
+  margin:24px 0 8px;letter-spacing:-.01em;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;animation:riseUp 1s cubic-bezier(.2,1,.3,1) backwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.15s}
+@keyframes riseUp{from{transform:translateY(110%)}to{transform:none}}
+.hero h1 em{font-style:italic;color:var(--tan)}
+.hero .script-sub{font-size:clamp(1.5rem,2.4vw,2.1rem);color:var(--pink);margin-bottom:18px;animation:fadeIn 1.2s .5s backwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:33rem;margin-bottom:30px;font-weight:500;animation:fadeIn 1.2s .65s backwards}
+.trust{display:flex;gap:16px;flex-wrap:wrap;animation:fadeIn 1.2s .8s backwards}
+.trust .t{
+  background:rgba(255,253,248,.72);border:1px solid var(--tan-light);border-radius:20px;
+  padding:16px 22px 14px;position:relative;overflow:hidden;transition:.35s;
+  box-shadow:0 12px 32px -20px rgba(79,53,32,.4);
+}
+.trust .t::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--tan),var(--pink));transform:scaleX(0);transform-origin:left;transition:.5s}
+.trust .t::after{content:'';position:absolute;top:0;left:-90%;width:60%;height:100%;transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:shine 4.5s 2s infinite}
+@keyframes shine{0%{left:-90%}18%{left:130%}100%{left:130%}}
+.trust .t:hover{transform:translateY(-5px)}
+.trust .t:hover::before{transform:scaleX(1)}
+.trust .t b{
+  font-family:'Playfair Display',serif;font-size:2.1rem;display:block;line-height:1.1;
+  background:linear-gradient(120deg,var(--brown),var(--brown-2) 60%,var(--tan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.trust .t b .plus{font-style:normal;color:var(--pink);-webkit-text-fill-color:var(--pink)}
+.trust .t>span{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:.03em}
+.starbar{position:relative;font-size:1.05rem;letter-spacing:2px;line-height:1;margin:3px 0 4px;width:fit-content}
+.starbar .bg{color:#e4d8bf}
+.starbar .fg{
+  position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;color:#efa528;
+  width:0;animation:starfill 1.6s 1.1s ease-out forwards;
+  text-shadow:0 2px 8px rgba(239,165,40,.45);
+}
+@keyframes starfill{to{width:98%}}
+.badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;animation:fadeIn 1.2s 1s backwards}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;background:var(--white);
+  border:1px solid var(--tan-light);border-radius:100px;padding:9px 18px 9px 12px;
+  font-weight:800;font-size:.8rem;color:var(--brown);
+  box-shadow:0 10px 26px -16px rgba(79,53,32,.45);transition:.3s;
+}
+.badge:hover{transform:translateY(-3px);border-color:var(--pink-2)}
+.badge .bic{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--pink-light);display:grid;place-items:center;font-size:.95rem}
+.badge em{font-style:normal;font-weight:700;font-size:.68rem;color:var(--muted);border-left:1px solid var(--tan-light);padding-left:10px}
+.marq-photos{display:flex;gap:14px;margin-top:38px;animation:fadeIn 1.2s .95s backwards}
+.marq-photos .ph{
+  width:96px;height:128px;border-radius:18px;overflow:hidden;flex-shrink:0;
+  box-shadow:0 14px 30px -14px rgba(79,53,32,.5);transform:rotate(-3deg);transition:.4s;
+  background:linear-gradient(160deg,var(--tan-light),var(--tan));
+}
+.marq-photos .ph:nth-child(even){transform:rotate(3deg) translateY(10px)}
+.marq-photos .ph:hover{transform:rotate(0) scale(1.12);z-index:3}
+.marq-photos img{width:100%;height:100%;object-fit:cover;filter:saturate(1.5) contrast(1.08) brightness(1.05)}
+
+/* hero form card */
+.hform{
+  background:rgba(255,253,248,.75);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(234,217,186,.9);border-radius:28px;padding:34px 32px 28px;
+  box-shadow:var(--shadow);position:relative;animation:cardIn 1.1s .4s cubic-bezier(.2,1.1,.3,1) backwards;
+}
+@keyframes cardIn{from{transform:translateY(50px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.hform .fh{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.hform .fh .ic{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--brown),var(--brown-2));color:var(--cream);display:grid;place-items:center;font-size:22px;box-shadow:0 10px 22px -10px rgba(79,53,32,.6)}
+.hform .fh h3{color:var(--brown);font-size:1.35rem;line-height:1.2}
+.hform .fh p{font-size:.78rem;color:var(--muted);font-weight:600}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.f-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.f-row .f-group{margin-bottom:0}
+label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brown-2)}
+input,select,textarea{
+  font-family:'Manrope',sans-serif;font-size:.93rem;font-weight:600;color:var(--ink);
+  background:var(--white);border:2px solid var(--tan-light);border-radius:13px;
+  padding:12px 15px;outline:none;transition:.25s;width:100%;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--brown);box-shadow:0 0 0 4px rgba(201,163,97,.18)}
+textarea{resize:vertical;min-height:70px}
+.submit-btn{--edge:#5e1050;width:100%;font-size:1rem;padding:17px;margin-top:4px;background:linear-gradient(180deg,var(--ig2),#96227e)}
+.submit-btn:hover{box-shadow:0 5px 0 var(--edge),0 22px 45px -14px rgba(195,42,163,.6)}
+.form-note{text-align:center;font-size:.72rem;color:var(--muted);margin-top:12px;font-weight:600}
+.spinner{width:18px;height:18px;border:3px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ============ TICKER ============ */
+.ticker-wrap{
+  background:linear-gradient(90deg,var(--brown),var(--brown-2),var(--brown));color:var(--cream);
+  padding:15px 0;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg) scale(1.02);
+  box-shadow:0 18px 45px -20px rgba(79,53,32,.6);position:relative;z-index:4;
+}
+.ticker{display:inline-block;animation:ticker 40s linear infinite}
+.ticker-wrap:hover .ticker{animation-play-state:paused}
+.ticker span{margin:0 24px;font-weight:700;font-size:.94rem;letter-spacing:.05em}
+.ticker b{color:var(--tan)}
+.ticker .live{color:#7ee2a0;font-size:.7rem;letter-spacing:.2em}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ SECTIONS ============ */
+section{padding:100px 4.5vw;position:relative}
+.sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
+.sec-head .kicker{font-size:.76rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--tan);margin-bottom:12px;display:block}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);font-weight:900;color:var(--brown);line-height:1.12;margin-bottom:14px}
+.sec-head p{color:var(--muted);font-weight:500}
+
+/* live price note */
+.live-note{
+  max-width:1300px;margin:0 auto 34px;display:flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--white);border:1px solid var(--tan-light);border-radius:100px;padding:12px 26px;
+  width:fit-content;font-weight:700;font-size:.86rem;color:var(--brown-2);box-shadow:0 10px 30px -18px rgba(79,53,32,.4);
+}
+.live-note .ldot{width:9px;height:9px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+
+/* destinations */
+#dest{background:var(--white)}
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;max-width:1340px;margin:0 auto}
+.dcard{
+  background:var(--cream);border-radius:var(--radius);overflow:hidden;cursor:pointer;position:relative;
+  border:1px solid var(--tan-light);box-shadow:0 12px 45px -24px rgba(79,53,32,.35);
+  transition:box-shadow .4s;transform-style:preserve-3d;will-change:transform;
+}
+.dcard:hover{box-shadow:var(--shadow)}
+.dcard .img{height:225px;overflow:hidden;position:relative;background:linear-gradient(150deg,var(--tan-light),var(--tan))}
+.dcard .img .fb{position:absolute;inset:0;display:grid;place-items:center;font-size:3.4rem;opacity:.85}
+.dcard .img img{position:relative;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1);filter:saturate(1.55) contrast(1.08) brightness(1.06)}
+.dcard:hover .img img{transform:scale(1.12)}
+.dcard .img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(42,32,19,.35));pointer-events:none}
+.price-tag{
+  position:absolute;top:15px;right:15px;z-index:2;background:rgba(255,253,248,.92);backdrop-filter:blur(6px);
+  border-radius:100px;padding:9px 16px;font-weight:800;color:var(--red);font-size:.98rem;
+  box-shadow:0 10px 24px -8px rgba(0,0,0,.35);display:flex;align-items:center;gap:7px;
+}
+.price-tag .ldot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+.price-tag small{color:var(--muted);font-weight:700;font-size:.65rem}
+.price-tag .pnum{font-variant-numeric:tabular-nums;min-width:2.1em;text-align:right;display:inline-block}
+.dcard .body{padding:20px 24px 24px}
+.dcard h3{font-size:1.5rem;color:var(--brown);line-height:1.1}
+.dcard .sub{font-family:'Caveat',cursive;color:var(--tan);font-size:1.25rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.chip{background:var(--white);border:1px solid var(--tan-light);border-radius:100px;padding:4px 12px;font-size:.7rem;font-weight:800;color:var(--brown-2)}
+.dcard .link{font-weight:800;font-size:.86rem;color:var(--brown);display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.dcard .link .arr{transition:.3s}
+.dcard:hover .link .arr{transform:translateX(7px)}
+.price-foot{max-width:1340px;margin:26px auto 0;text-align:center;font-size:.78rem;color:var(--muted);font-weight:600}
+
+/* included */
+.included{
+  max-width:1340px;margin:70px auto 0;border-radius:28px;padding:46px 5%;color:var(--cream);
+  background:linear-gradient(130deg,#3d2915,var(--brown) 55%,var(--brown-2));
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.included::before{content:'✈';position:absolute;font-size:15rem;opacity:.05;right:-40px;top:-60px;transform:rotate(15deg)}
+.inc-item{display:flex;gap:14px;align-items:flex-start}
+.inc-item .ic{font-size:24px;background:rgba(255,255,255,.12);width:52px;height:52px;min-width:52px;border-radius:15px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.12)}
+.inc-item b{display:block;font-size:.96rem;margin-bottom:2px}
+.inc-item span{font-size:.78rem;opacity:.72;font-weight:500}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1340px;margin:0 auto;counter-reset:st}
+.step{
+  background:var(--white);border-radius:var(--radius);padding:38px 30px;border:1px solid var(--tan-light);
+  position:relative;transition:.45s;box-shadow:0 12px 45px -28px rgba(79,53,32,.4);overflow:hidden;
+}
+.step::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--tan),var(--brown));transform:scaleX(0);transform-origin:left;transition:.5s}
+.step:hover{transform:translateY(-10px);box-shadow:var(--shadow)}
+.step:hover::before{transform:scaleX(1)}
+.step .num{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;line-height:1;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--tan),var(--brown-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:1.22rem;color:var(--brown);margin-bottom:9px}
+.step p{font-size:.9rem;color:var(--muted);font-weight:500}
+.step .hl{color:var(--red);font-weight:800}
+
+/* ============ REVIEWS (chat windows) ============ */
+#reviews{background:linear-gradient(180deg,var(--white) 0%,var(--cream-2) 100%)}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:1240px;margin:0 auto}
+.phone{
+  background:var(--white);border-radius:26px;overflow:hidden;border:1px solid var(--tan-light);
+  box-shadow:0 20px 60px -28px rgba(79,53,32,.45);transition:.45s;
+}
+.phone:hover{transform:translateY(-10px) rotate(-.5deg);box-shadow:var(--shadow)}
+.chat-head{
+  display:flex;align-items:center;gap:12px;padding:15px 18px;
+  background:linear-gradient(135deg,var(--ig1),var(--ig2) 60%,var(--ig3));color:#fff;
+}
+.chat-head .av{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-weight:800;font-family:'Playfair Display',serif;font-size:1.05rem;border:2px solid rgba(255,255,255,.5)}
+.chat-head b{display:block;font-size:.9rem;line-height:1.2}
+.chat-head span{font-size:.7rem;opacity:.85;display:flex;align-items:center;gap:5px}
+.chat-head span::before{content:'';width:7px;height:7px;border-radius:50%;background:#7ee2a0}
+.chat-head .icons{margin-left:auto;opacity:.85;letter-spacing:6px;font-size:.9rem}
+.chat-body{padding:20px 16px 22px;display:flex;flex-direction:column;gap:9px;background:
+  linear-gradient(160deg,#fdfaf4,#f6efe1)}
+.bubble{
+  max-width:85%;padding:11px 15px;font-size:.86rem;font-weight:600;line-height:1.45;
+  border-radius:18px;position:relative;opacity:0;transform:translateY(14px) scale(.96);
+}
+.phone.vis .bubble{animation:bubbleIn .5s cubic-bezier(.2,1.2,.3,1) forwards}
+@keyframes bubbleIn{to{opacity:1;transform:none}}
+.bubble.in{align-self:flex-start;background:#fff;border:1px solid #eee3cf;border-bottom-left-radius:6px;box-shadow:0 4px 14px -8px rgba(79,53,32,.3)}
+.bubble.out{align-self:flex-end;background:linear-gradient(135deg,var(--ig1),var(--ig2));color:#fff;border-bottom-right-radius:6px;box-shadow:0 6px 16px -8px rgba(123,63,242,.5)}
+.bubble .time{display:block;font-size:.6rem;opacity:.55;margin-top:4px;text-align:right;font-weight:700}
+.chat-body .stars{align-self:center;color:#e8a33d;letter-spacing:3px;font-size:.85rem;margin-top:6px;opacity:0}
+.phone.vis .stars{animation:bubbleIn .5s .9s forwards}
+.typing{display:inline-flex;gap:4px;align-items:center;padding:13px 16px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#c9b28a;animation:tp 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes tp{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+
+/* faq */
+.faq{max-width:780px;margin:0 auto}
+details{background:var(--white);border:1px solid var(--tan-light);border-radius:18px;padding:22px 28px;margin-bottom:14px;transition:.3s}
+details[open]{box-shadow:var(--shadow)}
+summary{font-weight:800;color:var(--brown);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:1rem;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--tan);transition:.3s;line-height:1}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:14px;color:var(--muted);font-size:.92rem;font-weight:500}
+
+/* cta band */
+.cta-band{
+  max-width:1240px;margin:0 auto;border-radius:32px;padding:80px 8%;text-align:center;color:var(--cream);
+  background:linear-gradient(130deg,#3d2915,var(--brown) 50%,var(--brown-2));
+  position:relative;overflow:hidden;box-shadow:var(--shadow);
+}
+.cta-band::before{content:'🌍';position:absolute;font-size:12rem;opacity:.07;top:-40px;left:-30px}
+.cta-band::after{content:'✈️';position:absolute;font-size:10rem;opacity:.07;bottom:-40px;right:-20px}
+.cta-band h2{font-size:clamp(1.9rem,3.8vw,3rem);margin-bottom:14px}
+.cta-band .script{font-size:1.7rem;color:var(--tan);display:block;margin-bottom:8px}
+.cta-band p{opacity:.82;margin-bottom:32px;font-weight:500;max-width:36rem;margin-left:auto;margin-right:auto}
+.cta-band .btn{background:var(--cream);color:var(--brown)!important}
+
+/* footer */
+footer{background:#1f1810;color:var(--cream);padding:64px 4.5vw 30px}
+.foot-grid{max-width:1240px;margin:0 auto 44px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px}
+.foot-grid h4{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:16px;color:var(--tan)}
+.foot-grid p,.foot-grid a{font-size:.87rem;opacity:.72;font-weight:500;text-decoration:none;display:block;margin-bottom:9px}
+.foot-grid a:hover{opacity:1;color:var(--tan)}
+.foot-bottom{max-width:1240px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.76rem;opacity:.5}
+
+/* modal */
+.modal-bg{position:fixed;inset:0;background:rgba(31,24,16,.6);backdrop-filter:blur(8px);display:none;place-items:center;z-index:200;padding:20px}
+.modal-bg.open{display:grid}
+.modal{background:var(--white);border-radius:28px;max-width:540px;width:100%;padding:42px 38px;box-shadow:0 50px 100px -30px rgba(0,0,0,.55);animation:pop .4s cubic-bezier(.2,1.4,.4,1);position:relative}
+@keyframes pop{from{transform:scale(.85) translateY(20px);opacity:0}to{transform:none;opacity:1}}
+.modal .close{position:absolute;top:18px;right:22px;background:none;border:none;font-size:26px;color:var(--muted);cursor:pointer}
+.modal h3{color:var(--brown);font-size:1.65rem;margin-bottom:8px}
+.modal>p{color:var(--muted);font-size:.9rem;font-weight:500;margin-bottom:16px}
+.sent-tag{display:inline-flex;align-items:center;gap:8px;background:#e7f3ea;color:var(--green);font-weight:800;font-size:.82rem;border-radius:100px;padding:8px 18px;margin-bottom:8px;margin-right:8px}
+.msg-preview{background:var(--cream);border:2px dashed var(--tan);border-radius:16px;padding:16px 18px;font-size:.85rem;white-space:pre-wrap;margin:14px 0 20px;max-height:200px;overflow:auto;font-weight:600}
+.modal .btn{width:100%}
+
+/* toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(130px);background:var(--brown);color:var(--cream);padding:14px 28px;border-radius:100px;font-weight:700;font-size:.9rem;z-index:300;transition:.45s cubic-bezier(.2,1.2,.3,1);box-shadow:var(--shadow)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(46px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.vis{opacity:1;transform:none}
+
+/* ============ GIRLY EXTRAS ============ */
+.petal{
+  position:fixed;top:-40px;z-index:2;pointer-events:none;user-select:none;
+  animation:fall linear forwards;opacity:.8;will-change:transform;
+}
+@keyframes fall{
+  0%{transform:translateY(-40px) translateX(0) rotate(0)}
+  25%{transform:translateY(28vh) translateX(34px) rotate(95deg)}
+  50%{transform:translateY(55vh) translateX(-26px) rotate(190deg)}
+  75%{transform:translateY(80vh) translateX(30px) rotate(280deg)}
+  100%{transform:translateY(110vh) translateX(-14px) rotate(380deg);opacity:0}
+}
+.viewers{
+  display:inline-flex;align-items:center;gap:7px;background:rgba(0,0,0,.24);
+  border-radius:100px;padding:6px 14px;font-weight:800;font-size:.78rem;
+}
+.viewers .vdot{width:8px;height:8px;border-radius:50%;background:#7ee2a0;animation:pulse 1.4s infinite}
+.social-toast{
+  position:fixed;bottom:26px;left:26px;z-index:290;max-width:330px;
+  background:var(--white);border:1px solid var(--pink-2);border-left:5px solid var(--pink);
+  border-radius:18px;padding:14px 18px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 22px 55px -20px rgba(226,87,143,.5);
+  transform:translateX(-120%);transition:.6s cubic-bezier(.2,1.2,.3,1);
+}
+.social-toast.show{transform:none}
+.social-toast .em{font-size:1.6rem;animation:flick 1.4s infinite alternate}
+.social-toast b{color:var(--pink);font-size:.86rem;display:block;line-height:1.35}
+.social-toast span{font-size:.72rem;color:var(--muted);font-weight:700}
+.confetti{position:fixed;z-index:400;pointer-events:none;font-size:1.3rem;animation:conf 1.6s ease-out forwards;will-change:transform}
+@keyframes conf{
+  from{transform:translate(0,0) rotate(0);opacity:1}
+  to{transform:translate(var(--dx),var(--dy)) rotate(720deg);opacity:0}
+}
+.sec-head .kicker::before{content:'🌸 '}
+.sec-head .kicker::after{content:' 🌸'}
+.deal-bar .sparkle{position:absolute;font-size:1rem;pointer-events:none;animation:spk 2.4s infinite}
+@keyframes spk{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+
+/* ---------- TOUCH DEVICES (any size, incl. iPhone landscape / iPad) ----------
+   No sticky :hover states, no heavy GPU effects — stable & smooth everywhere */
+@media(hover:none){
+  .dcard:hover,.step:hover,.phone:hover,.trust .t:hover,.badge:hover,
+  .btn:hover,.deal-bar .deal-cta:hover,.logo:hover svg{transform:none}
+  .dcard:hover .img img{transform:none}
+  .btn:hover{filter:none;box-shadow:0 5px 0 var(--edge),0 18px 35px -12px rgba(79,53,32,.55)}
+  .btn::after,.trust .t::after{display:none}
+  .step:hover::before{transform:scaleX(1)}
+  .blob{display:none}
+  body::before{display:none}
+  .ticker-wrap{transform:none}
+  .hform{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--white)}
+  .price-tag{backdrop-filter:none;background:#fffdf8}
+  nav.scrolled{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .deal-bar{animation:dealIn 1s .3s cubic-bezier(.2,1.2,.3,1) backwards;background-size:100% 100%}
+  .sparkle{display:none}
+}
+
+/* responsive */
+@media(max-width:1020px){
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  .marq-photos{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .deal-bar{margin-top:88px}
+}
+@media(max-width:720px){
+  /* stop iOS auto-zoom on input focus: fields must be >=16px */
+  input,select,textarea{font-size:16px;padding:13px 15px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:24px;gap:18px;box-shadow:0 24px 45px -20px rgba(0,0,0,.3)}
+  .nav-links.open{display:flex}
+  .burger{display:block}
+  .f-row{grid-template-columns:1fr}
+  section{padding:64px 5vw}
+  .foot-grid{grid-template-columns:1fr}
+  .deal-bar{border-radius:18px;padding:16px 18px;gap:10px 16px;margin:84px 4vw 0;text-align:center}
+  .deal-bar .deal-sub{display:none}
+  .deal-bar .txt{font-size:.9rem}
+  .deal-bar .deal-cta{width:100%;padding:15px}
+  .deal-bar .sparkle{display:none}
+  /* lighter effects = no jank on phones */
+  .blob{display:none}
+  body::before{display:none}
+  .hform{padding:26px 18px;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--white)}
+  nav.scrolled{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .ticker-wrap{transform:none;border-radius:0}
+  .hero{padding-top:28px;gap:34px}
+  .hero h1{margin-top:18px;font-size:2.35rem}
+  .hero p.lead{font-size:1rem}
+  .trust{gap:10px}
+  .trust .t{padding:12px 16px 10px;flex:1 1 40%}
+  .trust .t b{font-size:1.6rem}
+  .trust .t::after{display:none}
+  .badges{gap:8px}
+  .badge{font-size:.72rem;padding:8px 14px 8px 10px}
+  .badge em{display:none}
+  .social-toast{left:12px;right:12px;bottom:14px;max-width:none;padding:12px 14px}
+  .sec-head h2{font-size:1.8rem}
+  .modal{padding:32px 24px}
+  .included{padding:34px 7%;gap:22px}
+  .dcard .img{height:200px}
+  .dcard:hover{transform:none}
+  .price-tag{backdrop-filter:none;background:#fffdf8}
+  .phone:hover{transform:none}
+  .step:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a class="logo" href="#top" aria-label="Запознај го Светот">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="48" fill="#f5efe1"/>
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#e3d5b8" stroke-width="2"/>
+      <rect x="30" y="34" width="40" height="42" rx="7" fill="#6b4423"/>
+      <path d="M40 34 v-6 a4 4 0 0 1 4-4 h12 a4 4 0 0 1 4 4 v6" fill="none" stroke="#6b4423" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 42 l3.5 9.5 10.5 4.5 -10.5 4.5 -3.5 9.5 -3.5-9.5 -10.5-4.5 10.5-4.5 z" fill="#f5efe1"/>
+    </svg>
+    <div class="logo-text">Запознај го Светот<small>Individual Travel</small></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#dest">Дестинации</a></li>
+    <li><a href="#how">Како функционира</a></li>
+    <li><a href="#reviews">Впечатоци</a></li>
+    <li><a href="https://www.instagram.com/zapoznaj_go_svetot" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a class="btn" href="#top">Резервирај ✈</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Мени">☰</button>
+</nav>
+
+<!-- ============ SURPRISE TRIP BAR ============ -->
+<div class="deal-bar" id="dealBar">
+  <span class="sparkle" style="top:6px;left:8%">✨</span>
+  <span class="sparkle" style="top:10px;left:40%;animation-delay:.7s">✨</span>
+  <span class="sparkle" style="bottom:6px;right:10%;animation-delay:1.2s">✨</span>
+  <span class="flame">🎁</span>
+  <span class="lbl">Најдоброто патување на денот</span>
+  <span class="txt">Не знаеш каде? <b>Ние знаеме.</b> Дестинација: <b class="qmarks"><i>?</i><i>?</i><i>?</i></b></span>
+  <span class="txt deal-sub" style="font-size:.8rem;opacity:.92">🤫 Секој ден бираме ЕДНО патување со најдобра цена — ти го откриваме само во порака. Утре е друго. Не го пропуштај денешното!</span>
+  <button class="deal-cta" id="dealCta">Откриј ми ја дестинацијата 🎁 →</button>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div>
+    <span class="eyebrow"><span class="dot"></span> 12.3K патници нè следат · ★ 4.9</span>
+    <h1>
+      <span class="line"><span>Твоето следно</span></span>
+      <span class="line"><span>патување, <em>без стрес.</em></span></span>
+    </h1>
+    <div class="script script-sub">— лет ✈ хотел ✈ водич, сè средено за тебе</div>
+    <p class="lead">Организираме најповолни индивидуални патувања до најубавите светски дестинации — со лет од Скопје, Софија или Солун, хотел во центар, багаж и онлајн водич.</p>
+    <div class="trust">
+      <div class="t"><b><span data-count="2000">0</span><i class="plus">+</i></b><span>организирани патувања</span></div>
+      <div class="t"><b><span data-count="40">0</span><i class="plus">+</i></b><span>дестинации</span></div>
+      <div class="t">
+        <b><span data-count="4.9" data-dec="1">0</span></b>
+        <div class="starbar" aria-label="4.9 од 5"><span class="bg">★★★★★</span><span class="fg">★★★★★</span></div>
+        <span>од 2000+ оценки</span>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge"><i class="bic">✅</i> Верифицирани плаќања <em>Revolut Business</em></span>
+      <span class="badge"><i class="bic">🏅</i> 4+ години искуство <em>стотици среќни патници</em></span>
+    </div>
+    <div class="marq-photos">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=300&q=80" alt="Патничка со куфер" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=300&q=80" alt="Париз" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=300&q=80" alt="Санторини" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=300&q=80" alt="Патување" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300&q=80" alt="Цвеќиња" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=300&q=80" alt="Париз пролет" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+
+  <!-- FORM in hero -->
+  <div class="hform" id="form">
+    <div class="fh">
+      <div class="ic">✈</div>
+      <div>
+        <h3>Побарај понуда</h3>
+        <p>Одговараме во рок од неколку часа · цените се проверуваат во живо</p>
+      </div>
+    </div>
+    <form id="tripForm">
+      <div class="f-row">
+        <div class="f-group">
+          <label for="fname">Име</label>
+          <input type="text" id="fname" name="Име" placeholder="Твоето име" required>
+        </div>
+        <div class="f-group">
+          <label for="fdest">Дестинација</label>
+          <select id="fdest" name="Дестинација" required>
+            <option value="" disabled selected>Избери</option>
+            <option>Париз</option><option>Рим</option><option>Истанбул</option>
+            <option>Барселона</option><option>Венеција</option><option>Амстердам</option>
+            <option>Прага</option><option>Виена</option><option>Будимпешта</option>
+            <option>Милано</option><option>Малта</option><option>Санторини</option>
+            <option>Миконос</option><option>Крит</option><option>Аја Напа (Кипар)</option>
+            <option>Сицилија</option><option>Дубаи</option>
+            <option value="Друга">Друга дестинација ✍</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group">
+          <label for="fdate">Период</label>
+          <input type="text" id="fdate" name="Период" placeholder="пр. 10–14 септември" required>
+        </div>
+        <div class="f-group">
+          <label for="fpax">Патници</label>
+          <select id="fpax" name="Патници" required>
+            <option value="" disabled selected>Број</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group">
+          <label for="fbudget">Буџет по лице</label>
+          <select id="fbudget" name="Буџет" required>
+            <option value="" disabled selected>Избери</option>
+            <option>до 200€</option><option>200€ – 300€</option>
+            <option>300€ – 450€</option><option>450€+</option><option>Флексибилен</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label for="fcontact">Instagram / телефон</label>
+          <input type="text" id="fcontact" name="Контакт" placeholder="@профил или 07X..." required>
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="fnote">Забелешка <span style="opacity:.5;text-transform:none">(опционално)</span></label>
+        <textarea id="fnote" name="Забелешка" placeholder="Посебни желби — доручек, поглед на море..."></textarea>
+      </div>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn submit-btn" id="submitBtn">
+        <span class="spinner" id="spin"></span><span id="submitTxt">Испрати барање 📩</span>
+      </button>
+      <p class="form-note">Барањето ни стигнува автоматски + се отвора нашиот Instagram DM. 🔒 Без обврска за резервација.</p>
+    </form>
+  </div>
+</header>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+    <span class="live">● LIVE ЦЕНИ</span>
+    <span>ПАРИЗ <b>од 195€</b></span><span>✦</span>
+    <span>РИМ <b>од 195€</b></span><span>✦</span>
+    <span>ИСТАНБУЛ <b>од 190€</b></span><span>✦</span>
+    <span>ВЕНЕЦИЈА <b>од 190€</b></span><span>✦</span>
+    <span>ПРАГА <b>од 165€</b></span><span>✦</span>
+    <span>ВИЕНА <b>од 170€</b></span><span>✦</span>
+    <span>БАРСЕЛОНА <b>од 225€</b></span><span>✦</span>
+    <span>АМСТЕРДАМ <b>од 250€</b></span><span>✦</span>
+    <span>АЈА НАПА <b>од 175€</b></span><span>✦</span>
+    <span>МАЛТА <b>од 245€</b></span><span>✦</span>
+    <span>ДУБАИ <b>од 480€</b></span><span>✦</span>
+  </div>
+</div>
+
+<!-- ============ DESTINATIONS ============ -->
+<section id="dest">
+  <div class="sec-head reveal">
+    <span class="kicker">Дестинации</span>
+    <h2>Каде ќе те однесеме?</h2>
+    <p>Секој пакет вклучува лет, хотел, багаж и онлајн водич.</p>
+  </div>
+  <div class="live-note reveal"><span class="ldot"></span> Цените се менуваат секојдневно според летовите — побарај точна цена за твојот термин</div>
+  <div class="dest-grid" id="destGrid"><!-- cards injected by JS --></div>
+  <p class="price-foot reveal">* Прикажаните цени се последно потврдени почетни цени по лице и се менуваат дневно. Точната цена, местото на поаѓање (Скопје / Софија / Солун) и начинот на плаќање се потврдуваат при барањето.</p>
+
+  <div class="included reveal">
+    <div class="inc-item"><div class="ic">✈️</div><div><b>Најповолни летови</b><span>Од Скопје, Софија или Солун — зависно од пакетот</span></div></div>
+    <div class="inc-item"><div class="ic">🏨</div><div><b>Хотел во центар</b><span>Проверени хотели на топ локации</span></div></div>
+    <div class="inc-item"><div class="ic">🧳</div><div><b>Багаж / торба</b><span>Вклучен во секој пакет</span></div></div>
+    <div class="inc-item"><div class="ic">📖</div><div><b>Онлајн водич</b><span>Што да посетиш, каде да јадеш</span></div></div>
+    <div class="inc-item"><div class="ic">🎫</div><div><b>Чек-ин на билети</b><span>Ние го средуваме за тебе</span></div></div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section id="how">
+  <div class="sec-head reveal">
+    <span class="kicker">Едноставно е</span>
+    <h2>Како функционира?</h2>
+    <p>Од идеја до аеродром во четири чекори.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="num">01</div><h3>Избери дестинација</h3><p>Разгледај ги актуелните понуди или кажи ни каде сакаш — организираме и патувања по желба.</p></div>
+    <div class="step reveal"><div class="num">02</div><h3>Испрати барање</h3><p>Пополни ја формата — барањето ни стигнува веднаш и ти враќаме точна цена за твојот термин.</p></div>
+    <div class="step reveal"><div class="num">03</div><h3>Потврди и <span class="hl">резервирај</span></h3><p>Ти ги потврдуваме цената, поаѓањето и начинот на плаќање. Сигурна уплата преку Revolut payment system — кај одредени пакети е можна и резервација со аванс, прашај нè.</p></div>
+    <div class="step reveal"><div class="num">04</div><h3>Спакувај се и патувај</h3><p>Билети, хотел и водич — сè ти пристигнува. Чек-инот го средуваме ние. ✨</p></div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <div class="sec-head reveal">
+    <span class="kicker">Впечатоци</span>
+    <h2>Пораки од нашите патници</h2>
+    <p>Вистински разговори по враќањето — ★ 4.9 од 2000+ оценки.</p>
+  </div>
+  <div class="reviews">
+    <div class="phone reveal">
+      <div class="chat-head"><div class="av">М</div><div><b>Марија · Санторини</b><span>online</span></div><div class="icons">📞 ⋯</div></div>
+      <div class="chat-body">
+        <div class="bubble out" style="animation-delay:.1s">Здраво Марија! Се надеваме сè беше океј со патувањето 😊<span class="time">17:55 ✓✓</span></div>
+        <div class="bubble in" style="animation-delay:.35s">Фала ти! Прекрасно беше, поготово Оја 😍<span class="time">17:58</span></div>
+        <div class="bubble in" style="animation-delay:.6s">Хотелот беше одличен, а локацијата на прекрасно место — сигурно ќе дојдеме пак 🤍<span class="time">17:59</span></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="phone reveal">
+      <div class="chat-head"><div class="av">И</div><div><b>Ивана и Дарко · Амстердам</b><span>online</span></div><div class="icons">📞 ⋯</div></div>
+      <div class="chat-body">
+        <div class="bubble in" style="animation-delay:.1s">Амстердам е преубав, ми ги надмина очекувањата — премногу жив град! 🇳🇱<span class="time">10:36</span></div>
+        <div class="bubble in" style="animation-delay:.35s">Сè помина во најдобар ред, искрена препорака за Вас 🥰<span class="time">10:37</span></div>
+        <div class="bubble out" style="animation-delay:.6s">Ви благодариме многу! Се гледаме на следната дестинација ✈️<span class="time">10:41 ✓✓</span></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="phone reveal">
+      <div class="chat-head"><div class="av">К</div><div><b>Кристина · Барселона</b><span>online</span></div><div class="icons">📞 ⋯</div></div>
+      <div class="chat-body">
+        <div class="bubble in" style="animation-delay:.1s">Преубаво поминавме ❤️❤️❤️<span class="time">16:13</span></div>
+        <div class="bubble in" style="animation-delay:.35s">Хотелот е супер — нов, чист, мирен, секоја пофалба 🙌<span class="time">16:14</span></div>
+        <div class="bubble in" style="animation-delay:.6s">Следното патување повторно ќе ни биде со вас!<span class="time">16:15</span></div>
+        <div class="bubble in typing" style="animation-delay:.85s"><i></i><i></i><i></i></div>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="sec-head reveal">
+    <span class="kicker">Прашања</span>
+    <h2>Често поставувани прашања</h2>
+  </div>
+  <div class="faq">
+    <details class="reveal"><summary>Зошто цените се „од"?</summary><p>Цените на летовите и хотелите се менуваат секојдневно. Затоа секоја цена на страницава е последно потврдена почетна цена — кога ќе испратиш барање, веднаш ти ја проверуваме и потврдуваме точната цена за твојот термин.</p></details>
+    <details class="reveal"><summary>Како се резервира патување?</summary><p>Испрати барање преку формата или директно на Instagram. Откако ќе се договориме за термин и хотел, ти ги потврдуваме точната цена и начинот на уплата и резервираш за неколку минути.</p></details>
+    <details class="reveal"><summary>Дали може да се резервира со аванс?</summary><p>Кај одредени патувања постои можност за резервација со аванс, а остатокот се доплаќа пред поаѓање. Ова зависи од дестинацијата и терминот — прашај нè дали е достапно за твоето патување.</p></details>
+    <details class="reveal"><summary>Од каде се лета?</summary><p>Најчесто од Скопје, Софија или Солун — зависно од дестинацијата и пакетот. Точното поаѓање ти го потврдуваме заедно со цената кога ќе испратиш барање.</p></details>
+    <details class="reveal"><summary>Како функционира уплатата?</summary><p>Сигурно и едноставно — преку Revolut payment system добиваш линк, избираш картичка, Revolut Pay или Apple Pay и плаќаш за неколку секунди.</p></details>
+    <details class="reveal"><summary>Што е вклучено во цената?</summary><p>Лет (од Скопје, Софија или Солун), хотел во/близу центар, багаж/торба, онлајн водич за дестинацијата и чек-ин на авио билетите. Кај одредени пакети е вклучен и доручек — точниот пакет ти го потврдуваме при барањето.</p></details>
+    <details class="reveal"><summary>Дали патувањата се групни?</summary><p>Не — сите патувања се индивидуални. Патуваш кога сакаш, со кого сакаш, по твоја програма, а ние ја средуваме целата организација.</p></details>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section>
+  <div class="cta-band reveal">
+    <span class="script">подари незаборавни спомени 🎁</span>
+    <h2>Следи нè за нови понуди секоја недела</h2>
+    <p>Актуелни цени, попусти и нови дестинации — прво излегуваат на нашиот Instagram.</p>
+    <a class="btn" href="https://www.instagram.com/zapoznaj_go_svetot" target="_blank" rel="noopener">Следи @zapoznaj_go_svetot 📷</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Запознај го Светот</h4>
+      <p>Организираме најповолни индивидуални патувања до најубавите светски дестинации. Оценето со пет ѕвезди од нашите патници.</p>
+    </div>
+    <div>
+      <h4>Навигација</h4>
+      <a href="#dest">Дестинации</a>
+      <a href="#how">Како функционира</a>
+      <a href="#reviews">Впечатоци</a>
+      <a href="#top">Побарај понуда</a>
+    </div>
+    <div>
+      <h4>Контакт</h4>
+      <a href="https://www.instagram.com/zapoznaj_go_svetot" target="_blank" rel="noopener">📷 @zapoznaj_go_svetot</a>
+      <a href="https://ig.me/m/zapoznaj_go_svetot" target="_blank" rel="noopener">💬 Instagram DM</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span id="year"></span> Запознај го Светот. Сите права задржани.</span>
+    <span>Изработено со ❤ за патници</span>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <button class="close" id="modalClose" aria-label="Затвори">×</button>
+    <h3 id="modalTitle">Барањето е испратено! 🎉</h3>
+    <p id="modalSub">Го добивме твоето барање и ти враќаме точна цена наскоро. За најбрз одговор, отвори го и нашиот Instagram DM — пораката е веќе копирана, само залепи (Paste).</p>
+    <span class="sent-tag" id="sentTag">✔ Испратено автоматски</span>
+    <span class="sent-tag" style="background:#f3ecdf;color:var(--brown-2)" id="copyTag">📋 Копирано</span>
+    <div class="msg-preview" id="msgPreview"></div>
+    <a class="btn" href="https://ig.me/m/zapoznaj_go_svetot" target="_blank" rel="noopener">Отвори Instagram DM 📩</a>
+  </div>
+</div>
+
+<div class="toast" id="toast">✔ Дестинацијата е избрана</div>
+
+<script>
+/* ================= DATA ================= */
+const DESTS=[
+ {n:'Париз',s:'France',p:195,img:'photo-1511739001486-6bfe10ce785f',fb:'🗼',chips:['✈ Ноќевања и лет','🏨 Хотел','🧳 Багаж']},
+ {n:'Рим',s:'Italia',p:195,img:'photo-1552832230-c0197dd311b5',fb:'🏛',chips:['✈ Ноќевања и лет','🏨 Хотел близу центар','🧳 Багаж']},
+ {n:'Истанбул',s:'Türkiye',p:190,img:'photo-1524231757912-21f4fe3a7200',fb:'🕌',chips:['✈ Директен лет','🍳 Доручек','🏨 Хотел во центар']},
+ {n:'Барселона',s:'Spain',p:225,img:'photo-1583422409516-2895a77efded',fb:'⛪',chips:['✈ Ноќевања и лет','🏨 Хотел','📖 Водич']},
+ {n:'Венеција',s:'Italia',p:190,img:'photo-1523906834658-6e24ef2386f9',fb:'🛶',chips:['✈ Ноќевања и лет','🏨 Хотел близу центар']},
+ {n:'Амстердам',s:'Netherlands',p:250,img:'photo-1534351590666-13e3e96b5017',fb:'🚲',chips:['✈ Ноќевања и лет','🏨 Хотел','🧳 Багаж']},
+ {n:'Прага',s:'Czechia',p:165,img:'photo-1519677100203-a0e668c92439',fb:'🏰',chips:['✈ Ноќевања и лет','🏨 Хотел близу центар']},
+ {n:'Виена',s:'Austria',p:170,img:'photo-1516550893923-42d28e5677af',fb:'🎻',chips:['✈ Ноќевања и лет','🏨 Хотел','📖 Водич']},
+ {n:'Санторини',s:'Greece',p:425,img:'photo-1613395877344-13d4a8e0d49e',fb:'🌅',chips:['✈ 7 ноќевања и лет','🏨 Хотел близу центар']},
+ {n:'Аја Напа',s:'Cyprus',p:175,img:'photo-1507525428034-b723cf961d3e',fb:'🏖',chips:['✈ 7 ноќевања и лет','📖 Online водич']},
+ {n:'Малта',s:'Malta',p:245,img:'photo-1514222134-b57cbb8ce073',fb:'🌊',chips:['✈ Ноќевања и лет','🏨 Хотел во центар']},
+ {n:'Дубаи',s:'United Arab Emirates',p:480,img:'photo-1512453979798-5ea266f8880c',fb:'🌆',chips:['✈ Лет Софија – Абу Даби','🏨 Хотел со базен']},
+];
+const DEALS=[
+ {d:'Париз',old:235,neu:189},{d:'Рим',old:225,neu:179},{d:'Истанбул',old:210,neu:165},
+ {d:'Барселона',old:270,neu:219},{d:'Прага',old:200,neu:155},{d:'Венеција',old:220,neu:169},
+ {d:'Виена',old:195,neu:149},{d:'Амстердам',old:265,neu:215},{d:'Будимпешта',old:230,neu:179},
+ {d:'Аја Напа (Кипар)',old:230,neu:175},
+];
+
+/* ================= NAV ================= */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* ================= BUILD DEST CARDS ================= */
+const grid=document.getElementById('destGrid');
+DESTS.forEach((d,i)=>{
+  const el=document.createElement('div');
+  el.className='dcard reveal';el.dataset.dest=d.n;
+  el.innerHTML=`
+    <div class="img">
+      <div class="fb">${d.fb}</div>
+      <img src="https://images.unsplash.com/${d.img}?w=900&q=82&auto=format&fit=crop" alt="${d.n}" loading="lazy" onerror="this.remove()">
+      <div class="price-tag"><span class="ldot"></span>од <span class="pnum" data-base="${d.p}">${d.p}</span>€ <small>по лице*</small></div>
+    </div>
+    <div class="body">
+      <h3>${d.n}</h3><div class="sub">${d.s}</div>
+      <div class="chips">${d.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      <a class="link" href="#top">Провери актуелна цена <span class="arr">→</span></a>
+    </div>`;
+  grid.appendChild(el);
+});
+
+/* card click -> preselect */
+const toast=document.getElementById('toast');
+function selectDest(name){
+  const sel=document.getElementById('fdest');let ok=false;
+  [...sel.options].forEach(o=>{if(o.text===name||o.value===name){sel.value=o.value;ok=true}});
+  if(!ok)sel.value='Друга';
+  document.getElementById('top').scrollIntoView({behavior:'smooth'});
+  toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400);
+}
+grid.addEventListener('click',e=>{
+  const c=e.target.closest('.dcard');if(!c)return;
+  e.preventDefault();selectDest(c.dataset.dest);
+});
+
+/* 3D tilt */
+if(matchMedia('(pointer:fine)').matches){
+  grid.addEventListener('mousemove',e=>{
+    const c=e.target.closest('.dcard');if(!c)return;
+    const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-6px)`;
+  });
+  grid.addEventListener('mouseout',e=>{
+    const c=e.target.closest('.dcard');if(c)c.style.transform='';
+  });
+}
+
+/* ================= LIVE PRICE ANIMATION ================= */
+function rollPrice(el){
+  const base=+el.dataset.base,t0=performance.now(),dur=900;
+  function step(t){
+    const p=Math.min((t-t0)/dur,1);
+    if(p<1){
+      el.textContent=Math.max(99,Math.round(base+(Math.random()*90-45)*(1-p)));
+      requestAnimationFrame(step);
+    }else el.textContent=base;
+  }
+  requestAnimationFrame(step);
+}
+const pio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){rollPrice(e.target);pio.unobserve(e.target)}
+}),{threshold:.5});
+document.querySelectorAll('.pnum').forEach(el=>pio.observe(el));
+if(matchMedia('(hover:hover)').matches){ // desktop only: subtle periodic re-roll
+  setInterval(()=>{
+    if(document.hidden)return;
+    const nums=[...document.querySelectorAll('.pnum')];
+    const vis=nums.filter(n=>{const r=n.getBoundingClientRect();return r.top<innerHeight&&r.bottom>0});
+    if(vis.length)rollPrice(vis[Math.floor(Math.random()*vis.length)]);
+  },11000);
+}
+
+/* ================= SURPRISE TRIP ================= */
+document.getElementById('dealCta').addEventListener('click',async()=>{
+  const msg=
+`Здраво! 🎁 Откријте ми го НАЈДОБРОТО ПАТУВАЊЕ НА ДЕНОТ! 🤫✈️
+
+Не можам да одлучам каде — кажете ми ја денешната топ дестинација со најдобра цена! 🌍🔥
+
+(преку веб-страницата) 🌸`;
+  let copied=false;
+  try{await navigator.clipboard.writeText(msg);copied=true}catch(_){}
+  document.getElementById('msgPreview').textContent=msg;
+  document.getElementById('sentTag').style.display='none';
+  document.getElementById('copyTag').textContent=copied?'📋 Копирано — само залепи во DM':'📋 Селектирај и копирај ја пораката';
+  document.getElementById('modalTitle').textContent='Дестинацијата те чека во DM! 🤫';
+  document.getElementById('modalSub').textContent='Пораката е копирана — отвори го нашиот Instagram DM, залепи (Paste) и испрати. Ти одговараме со денешното топ патување и неговата специјална цена. Важи само денес! 🎁';
+  modalBg.classList.add('open');
+  confetti();
+});
+
+/* ================= FALLING PETALS ================= */
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const EMO=['🌸','🌷','💮','✨','🌸','🩷'];
+  const mobile=innerWidth<720||matchMedia('(hover:none)').matches,MAX=mobile?6:14;
+  function spawn(){
+    if(document.hidden||document.querySelectorAll('.petal').length>MAX)return;
+    const p=document.createElement('span');
+    p.className='petal';
+    p.textContent=EMO[Math.floor(Math.random()*EMO.length)];
+    p.style.left=Math.random()*92+'vw';
+    p.style.fontSize=(mobile?10+Math.random()*10:12+Math.random()*16)+'px';
+    p.style.animationDuration=(9+Math.random()*9)+'s';
+    document.body.appendChild(p);
+    p.addEventListener('animationend',()=>p.remove());
+  }
+  for(let i=0;i<(mobile?3:6);i++)setTimeout(spawn,i*900);
+  setInterval(spawn,mobile?3200:1600);
+})();
+
+/* ================= SOCIAL PROOF TOASTS ================= */
+(function(){
+  const names=['Марија','Ивана','Кристина','Симона','Тамара','Ана','Билјана','Елена','Сара','Магдалена','Теодора','Јована','Викторија','Стефанија','Милица'];
+  const cities=['Скопје','Битола','Тетово','Охрид','Куманово','Струмица','Велес','Прилеп','Гостивар','Кавадарци'];
+  const acts=['штотуку побара понуда за','резервираше место за','провери цена за'];
+  const t=document.createElement('div');
+  t.className='social-toast';
+  t.innerHTML='<span class="em">🌸</span><div><b id="spTxt"></b><span id="spTime"></span></div>';
+  document.body.appendChild(t);
+  function show(){
+    if(document.hidden)return;
+    const d=DESTS[Math.floor(Math.random()*DESTS.length)];
+    document.getElementById('spTxt').textContent=
+      names[Math.floor(Math.random()*names.length)]+' од '+
+      cities[Math.floor(Math.random()*cities.length)]+' '+
+      acts[Math.floor(Math.random()*acts.length)]+' '+d.n+' ✈';
+    document.getElementById('spTime').textContent='пред '+(1+Math.floor(Math.random()*19))+' минути';
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),5200);
+  }
+  function loop(){show();setTimeout(loop,50000+Math.random()*40000)}
+  setTimeout(loop,20000);
+})();
+
+/* ================= CONFETTI ================= */
+function confetti(){
+  const EMO=['🎉','🌸','✈️','✨','💖','🎊'];
+  for(let i=0;i<26;i++){
+    const c=document.createElement('span');
+    c.className='confetti';c.textContent=EMO[i%EMO.length];
+    c.style.left='50%';c.style.top='45%';
+    c.style.setProperty('--dx',(Math.random()*520-260)+'px');
+    c.style.setProperty('--dy',(Math.random()*420-320)+'px');
+    c.style.animationDelay=(Math.random()*.25)+'s';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),2100);
+  }
+}
+
+/* ================= TICKER ================= */
+const ticker=document.getElementById('ticker');
+ticker.innerHTML+=ticker.innerHTML;
+
+/* ================= REVEAL ================= */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll('.reveal,.phone').forEach(el=>io.observe(el));
+
+/* counters */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,end=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),t0=performance.now();
+  const step=t=>{
+    const p=Math.min((t-t0)/1600,1),v=end*(1-Math.pow(1-p,3));
+    el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString('mk-MK');
+    if(p<1)requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);cio.unobserve(el);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ================= FORM: auto-send email + IG DM ================= */
+const form=document.getElementById('tripForm'),modalBg=document.getElementById('modalBg');
+const EMAIL='zapoznajgosvetot3@yahoo.com'; // FormSubmit auto-forwards submissions here
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const g=id=>document.getElementById(id).value.trim();
+  const msg=
+`Здраво! 👋 Сакам да побарам понуда за патување:
+
+📍 Дестинација: ${g('fdest')}
+📅 Период: ${g('fdate')}
+👥 Патници: ${g('fpax')}
+💶 Буџет по лице: ${g('fbudget')}
+📱 Контакт: ${g('fcontact')}${g('fnote')?`
+📝 Забелешка: ${g('fnote')}`:''}
+
+— ${g('fname')} (преку веб-страницата) 🌍`;
+
+  const btn=document.getElementById('submitBtn'),spin=document.getElementById('spin'),txt=document.getElementById('submitTxt');
+  btn.disabled=true;spin.style.display='block';txt.textContent='Се испраќа…';
+
+  let sent=false;
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/'+EMAIL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'✈ Ново барање: '+g('fdest')+' — '+g('fname'),
+        _template:'table',
+        'Име':g('fname'),'Дестинација':g('fdest'),'Период':g('fdate'),
+        'Патници':g('fpax'),'Буџет':g('fbudget'),'Контакт':g('fcontact'),'Забелешка':g('fnote')||'—'
+      })
+    });
+    sent=r.ok;
+  }catch(_){sent=false}
+
+  let copied=false;
+  try{await navigator.clipboard.writeText(msg);copied=true}catch(_){}
+
+  document.getElementById('msgPreview').textContent=msg;
+  document.getElementById('sentTag').style.display=sent?'inline-flex':'none';
+  document.getElementById('copyTag').textContent=copied?'📋 Копирано — само залепи во DM':'📋 Селектирај и копирај ја пораката';
+  document.getElementById('modalTitle').textContent=sent?'Барањето е испратено! 🎉':'Барањето е подготвено! ✈';
+  document.getElementById('modalSub').textContent=sent
+    ?'Го добивме твоето барање автоматски и ти враќаме точна цена наскоро. За најбрз одговор, отвори го и нашиот Instagram DM — пораката е веќе копирана.'
+    :'Пораката е копирана — отвори го нашиот Instagram DM и залепи ја (Paste). Ти одговараме најбрзо што можеме.';
+  modalBg.classList.add('open');
+  confetti();
+  btn.disabled=false;spin.style.display='none';txt.textContent='Испрати барање 📩';
+});
+document.getElementById('modalClose').addEventListener('click',()=>modalBg.classList.remove('open'));
+modalBg.addEventListener('click',e=>{if(e.target===modalBg)modalBg.classList.remove('open')});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
